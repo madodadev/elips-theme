@@ -1,0 +1,371 @@
+/*
+Theme Name: Elips
+Author: Assedio Horacio
+Author URI: https://madoda.co.mz/
+Description: school theme.
+Version: 2.0
+Text Domain: madoda
+Tags: school
+*/
+$colors: (
+    main: #1fee8e,
+    mainli: #46fda8,
+    mainfg: #FDFEFE,
+    sec: #222222
+);
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+$tablets-with: 768px;
+@mixin tablet {
+    @media (min-width: #{$tablets-with}) {
+        @content
+    }
+}
+@mixin container {
+    width: 80%;
+    margin: 0 auto;   
+}
+
+* { margin: 0; padding: 0; list-style: none; text-decoration: none;}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+header {
+    .top-nav {
+        position: fixed;
+        width: 100%;
+        background-color: color("main");
+        box-shadow: 1px 1px 20px rgba($color: #000, $alpha: .3);
+        color: color("mainfg");
+        a{color: color("mainfg");}
+        // padding: 20px;
+        font-size: 1.8rem;
+        text-align: end;
+        .brand {float: left; padding: 20px 0;}
+        .menu-toolbar {
+            text-align: end; padding: 20px 0; 
+            img {
+                cursor: pointer;
+            }
+        }
+        nav {
+            ul {
+                display: none;
+                li {
+                    cursor: pointer;
+                    line-height: 40px;
+                }
+                li:hover {
+                    background-color: color("mainli");
+                    border-bottom: 1px solid rgba($color: #000000, $alpha: .5);
+
+                }
+            }
+            li>ul {
+                // display: none;
+                background-color: color("mainli");
+                padding: 0px;
+                margin-right: 30px;
+                transition: .3s;
+                li {
+                    display: none;
+                    padding: 10px;
+                    box-shadow: 1px 1px 1px rgba($color: #000000, $alpha: 0.1);
+                 
+                }
+                li:hover {
+                    border: none;
+                    box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.1);
+                }
+                transition: .3s;
+            }
+        }
+        
+        @include tablet {
+            .menu-toolbar {display: none;}
+    
+            nav {
+                text-align: end;
+                ul {
+                    display: block;
+                    box-shadow: none;
+
+                    li {
+                        padding: 20px;
+                        font-size: 1.3rem;
+                    }
+                    li:hover {
+                        background-color: color("mainli");
+                        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.5);
+                    }
+                }
+                
+                
+                ul li{
+                    display: inline-table;
+                }
+
+                li>ul {
+                    position: absolute;
+                    margin-top: 20px;
+                    // padding: 10px 20px 0;
+                    background-color: color("main");
+                    
+                    li{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-info {
+        background-color: color("mainli");
+        color: color("sec");
+        padding: 120px 0 20px;
+        margin-bottom: 10px;
+        a {
+            color: color("sec");
+            font-weight: 500;
+            font-family: sans-serif;
+            text-transform: capitalize;
+            text-decoration: underline;
+            transition: .3s;
+            &:hover {
+                color: color("mainfg");
+            }
+        }
+        .page-info-title {
+            font-size: 2rem;
+        }
+        
+        .single-info-title {
+            font-size: 1.5rem;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .tags {
+            font-size: 1.2rem;
+        }
+        .search{
+            background-color: color("main");
+            height: 50px;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            // border-radius: 15px;
+            input[type="search"] {
+                border: none;
+                background: rgba($color: #000000, $alpha: 0);
+                outline: none;
+                height: 50px;
+                width: 90%;
+                padding: 20px 10px;
+                color: color("mainfg");
+                font-size: 1.8rem;
+                
+            }
+            .search-icon {
+               float: right;
+            //    padding: 15px 0;
+               width: 10%;
+               
+               text-align: center;
+               background-color: color("sec");
+        
+                img {
+                    padding: 13px 0;
+                }
+            }
+
+
+        }
+        
+        @include tablet {
+            .wrapper {
+                display: grid;
+                grid-gap: 5px;
+                grid-template-columns: 1fr 1fr;
+                
+            }
+        }
+
+    }
+
+    
+}
+section {
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: center;
+        text-decoration: underline;
+        color: color("sec");
+    }
+}
+section.main {
+    padding: 20px 0;
+    .wrapper{    
+        @include tablet {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 10px;;
+            justify-items: center;
+            // align-items: center;
+        }
+    }
+}
+article.main {
+    a {color: color("main");}
+    padding: 10px 0 20px;
+    .title {
+        a {
+            font-size: 2rem;
+        }
+    }
+    .post-info {
+        color: color("main");
+        font-size: 20px;
+        a {
+            font-size: 25px;
+        }
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 1.5rem;
+        color: color("sec");
+        line-height: 35px;
+        margin: 10px 0;
+        font-family: sans-serif;
+        word-break: break-all;
+    }
+    a {
+        font-size: 1.5rem;
+        color: color("main");
+        font-family: sans-serif;;
+    }
+
+    @include tablet {
+       
+    }
+}
+
+article.exame {
+    background-color: color("main");
+    padding: 10px;
+    box-shadow: 1px 1px 10px rgba($color: #000000, $alpha: 0.1);
+    width: 100%;
+    .title {
+        font-size: 1.5rem;
+        color: color("mainfg");
+    }
+    .exame-info {
+        font-size: 1.2rem;
+        color: color("sec");
+        padding-top: 5px;
+        text-align: end;
+    }
+
+    @include tablet {
+        // float: left;
+    }
+}
+section.sec {
+    .wrapper {
+        // display: inline-table;
+        text-align: center;
+
+        @include tablet {
+            div {
+                display: inline-block;
+            }
+        }
+    }
+}
+.deci-title {
+    font-size: 2rem;
+    background-color: color("main");
+    color: color("mainfg");
+    margin: 10px 0;
+    padding: 60px 50px;
+    text-align: center;
+    &:hover {
+        background-color: color("mainli");
+    }
+}
+
+
+footer {
+    background-color: color("main");
+    color: color("mainfg");
+    padding: 20px 0 0;
+    margin-top: 10px;
+    nav {
+        text-align: center;
+        li {
+            font-size: 1.5rem;
+            a{
+                color: color("mainfg");
+                transition: .5s;
+            }
+            a:hover {
+                color: color("sec");
+            }
+        }
+       
+        li.dropDown {
+            .dropDown-title {
+                // text-decoration: underline;
+                color: color("sec");
+            }
+        }
+        ul > li {
+            display: inline-table;
+            margin: 0 10px;
+            a{color: color("mainfg");}
+        }
+    
+        li>ul {
+            li{
+                display: block;
+            }
+        }
+    }
+
+    .copyright {
+        background-color: color("mainli");
+        color: color("sec");
+        margin: 0;
+        padding: 20px;
+
+        .powered-info {
+            text-align: end;
+        }
+    }
+}
+
+.post-thumbnail {
+    img {
+        width: 100%;
+    }
+    margin: 20px 0;
+}
+
+.single-title {
+    font-size: 2rem;
+}
+
+.single-content {
+    font-size: 1.5rem;
+}

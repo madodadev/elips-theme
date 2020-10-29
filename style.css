@@ -1,0 +1,370 @@
+/*
+Theme Name: Elips
+Author: Assedio Horacio
+Author URI: https://madoda.co.mz/
+Description: school theme.
+Version: 2.0
+Text Domain: madoda
+Tags: school
+*/
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header .top-nav {
+  position: fixed;
+  width: 100%;
+  background-color: #1fee8e;
+  -webkit-box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  color: #FDFEFE;
+  font-size: 1.8rem;
+  text-align: end;
+}
+
+header .top-nav a {
+  color: #FDFEFE;
+}
+
+header .top-nav .brand {
+  float: left;
+  padding: 20px 0;
+}
+
+header .top-nav .menu-toolbar {
+  text-align: end;
+  padding: 20px 0;
+}
+
+header .top-nav .menu-toolbar img {
+  cursor: pointer;
+}
+
+header .top-nav nav ul {
+  display: none;
+}
+
+header .top-nav nav ul li {
+  cursor: pointer;
+  line-height: 40px;
+}
+
+header .top-nav nav ul li:hover {
+  background-color: #46fda8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+header .top-nav nav li > ul {
+  background-color: #46fda8;
+  padding: 0px;
+  margin-right: 30px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  transition: .3s;
+}
+
+header .top-nav nav li > ul li {
+  display: none;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+header .top-nav nav li > ul li:hover {
+  border: none;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  header .top-nav .menu-toolbar {
+    display: none;
+  }
+  header .top-nav nav {
+    text-align: end;
+  }
+  header .top-nav nav ul {
+    display: block;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  header .top-nav nav ul li {
+    padding: 20px;
+    font-size: 1.3rem;
+  }
+  header .top-nav nav ul li:hover {
+    background-color: #46fda8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  header .top-nav nav ul li {
+    display: inline-table;
+  }
+  header .top-nav nav li > ul {
+    position: absolute;
+    margin-top: 20px;
+    background-color: #1fee8e;
+  }
+  header .top-nav nav li > ul li {
+    display: none;
+  }
+}
+
+header .page-info {
+  background-color: #46fda8;
+  color: #222222;
+  padding: 120px 0 20px;
+  margin-bottom: 10px;
+}
+
+header .page-info a {
+  color: #222222;
+  font-weight: 500;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  text-decoration: underline;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+header .page-info a:hover {
+  color: #FDFEFE;
+}
+
+header .page-info .page-info-title {
+  font-size: 2rem;
+}
+
+header .page-info .single-info-title {
+  font-size: 1.5rem;
+}
+
+header .page-info .description {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+header .page-info .tags {
+  font-size: 1.2rem;
+}
+
+header .page-info .search {
+  background-color: #1fee8e;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+header .page-info .search input[type="search"] {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  height: 50px;
+  width: 90%;
+  padding: 20px 10px;
+  color: #FDFEFE;
+  font-size: 1.8rem;
+}
+
+header .page-info .search .search-icon {
+  float: right;
+  width: 10%;
+  text-align: center;
+  background-color: #222222;
+}
+
+header .page-info .search .search-icon img {
+  padding: 13px 0;
+}
+
+@media (min-width: 768px) {
+  header .page-info .wrapper {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 5px;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+section .section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: underline;
+  color: #222222;
+}
+
+section.main {
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  section.main .wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+    grid-gap: 10px;
+    justify-items: center;
+  }
+}
+
+article.main {
+  padding: 10px 0 20px;
+}
+
+article.main a {
+  color: #1fee8e;
+}
+
+article.main .title a {
+  font-size: 2rem;
+}
+
+article.main .post-info {
+  color: #1fee8e;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+article.main .post-info a {
+  font-size: 25px;
+}
+
+article.main p {
+  font-size: 1.5rem;
+  color: #222222;
+  line-height: 35px;
+  margin: 10px 0;
+  font-family: sans-serif;
+  word-break: break-all;
+}
+
+article.main a {
+  font-size: 1.5rem;
+  color: #1fee8e;
+  font-family: sans-serif;
+}
+
+article.exame {
+  background-color: #1fee8e;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+article.exame .title {
+  font-size: 1.5rem;
+  color: #FDFEFE;
+}
+
+article.exame .exame-info {
+  font-size: 1.2rem;
+  color: #222222;
+  padding-top: 5px;
+  text-align: end;
+}
+
+section.sec .wrapper {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  section.sec .wrapper div {
+    display: inline-block;
+  }
+}
+
+.deci-title {
+  font-size: 2rem;
+  background-color: #1fee8e;
+  color: #FDFEFE;
+  margin: 10px 0;
+  padding: 60px 50px;
+  text-align: center;
+}
+
+.deci-title:hover {
+  background-color: #46fda8;
+}
+
+footer {
+  background-color: #1fee8e;
+  color: #FDFEFE;
+  padding: 20px 0 0;
+  margin-top: 10px;
+}
+
+footer nav {
+  text-align: center;
+}
+
+footer nav li {
+  font-size: 1.5rem;
+}
+
+footer nav li a {
+  color: #FDFEFE;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+footer nav li a:hover {
+  color: #222222;
+}
+
+footer nav li.dropDown .dropDown-title {
+  color: #222222;
+}
+
+footer nav ul > li {
+  display: inline-table;
+  margin: 0 10px;
+}
+
+footer nav ul > li a {
+  color: #FDFEFE;
+}
+
+footer nav li > ul li {
+  display: block;
+}
+
+footer .copyright {
+  background-color: #46fda8;
+  color: #222222;
+  margin: 0;
+  padding: 20px;
+}
+
+footer .copyright .powered-info {
+  text-align: end;
+}
+
+.post-thumbnail {
+  margin: 20px 0;
+}
+
+.post-thumbnail img {
+  width: 100%;
+}
+
+.single-title {
+  font-size: 2rem;
+}
+
+.single-content {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=style.css.map */
